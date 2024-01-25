@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Public Visitor Pass Issuing System</title>
+    <script src="index.js"></script>
+  </head>
+  <style>
+    .form-container {
+      width: 100%;
+      text-align: center;
+    }
+    .title {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(46, 36, 36);
+      font-weight: bold;
+      font-size: 45px;
+      padding-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      margin: auto;
+    }
+
+    table tr td {
+      padding: 10px 0px;
+      text-align: left;
+    }
+    form {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      width: 35%;
+      margin: auto;
+      padding: 30px;
+    }
+
+    form label {
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+    }
+
+    form input,
+    select {
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 5px;
+      border-radius: 4px;
+      outline: rgb(73, 72, 72);
+    }
+
+    form input[type="button"] {
+      background-color: rgb(110, 110, 177);
+      color: white;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red !important;
+    }
+  </style>
+  <body>
+    <div class="form-container">
+      <h1 class="title">Public Visitor Pass Issuing System</h1>
+      <form name="myForm" onsubmit="">
+        <table>
+          <tr>
+            <td><label for="visitor-name">Name of public visitor</label></td>
+            <td>
+              : <input type="text" id="visitor-name" name="visitorName" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span class="error" id="visitorNameError"></span></td>
+          </tr>
+          <tr>
+            <td><label for="nic">NIC number</label></td>
+            <td>: <input type="text" id="nic" name="visitorNic" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span class="error" id="visitorNicError"></span></td>
+          </tr>
+          <tr>
+            <td><label for="">Contact number</label></td>
+            <td>: <input type="text" id="tpno" name="telephoneNumber" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span class="error" id="telephoneNumberError"></span></td>
+          </tr>
+          <tr>
+            <td><label for="">Visitor type</label></td>
+            <td>
+              :
+              <select name="" id="visitorType" name="visitorType">
+                <option selected value="">select</option>
+                <option value="SS">School student</option>
+                <option value="CS">Campus student</option>
+                <option value="PR">Public researcher</option>
+                <option value="O">Other</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span class="error" id="visitorTypeError"></span></td>
+          </tr>
+          <tr>
+            <td><label for="">Pass valid hours</label></td>
+            <td>: <input type="number" name="passValidHoure" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><span class="error" id="passValidHoureError"></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="button" value="Create" onclick="validateForm()" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
